@@ -11,7 +11,12 @@ function App() {
         Toggle Mode
       </Button>
 
-      <Text fontSize="xl">Hello</Text>
+      <Text fontSize="xl" color="primary.500">
+        Hello
+      </Text>
+      <Text fontSize="xl" color="secondary.500">
+        Hello
+      </Text>
     </>
   );
 }
