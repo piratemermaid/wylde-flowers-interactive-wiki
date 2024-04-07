@@ -1,6 +1,6 @@
 import { Button, Text, useColorMode } from '@chakra-ui/react';
 
-import './App.css';
+import './styles/App.css';
 
 function App() {
   const { toggleColorMode } = useColorMode();
