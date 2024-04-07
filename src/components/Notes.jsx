@@ -1,19 +1,17 @@
 import React from 'react';
 import { Textarea } from '@chakra-ui/react';
 
-export default function Notes() {
-  let [value, setValue] = React.useState('');
+import { useStore } from '../store';
 
-  let handleInputChange = (e) => {
-    let inputValue = e.target.value;
-    setValue(inputValue);
-  };
+export default function Notes() {
+  const notes = useStore((state) => state.notes);
+  const setNotes = useStore((state) => state.setNotes);
 
   return (
     <>
       <Textarea
-        value={value}
-        onChange={handleInputChange}
+        value={notes}
+        onChange={(event) => setNotes(event.target.value)}
         placeholder="Take notes here"
         height="auto"
         rows={30}

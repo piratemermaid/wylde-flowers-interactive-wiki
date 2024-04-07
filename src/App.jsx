@@ -35,7 +35,7 @@ function App() {
         Toggle Dark Mode
       </Button>
 
-      <SimpleGrid columns={2}>
+      <SimpleGrid columns={2} spacing={10}>
         <Section>
           <SectionTitle title="Schedules By Day" />
           <DaySelector
