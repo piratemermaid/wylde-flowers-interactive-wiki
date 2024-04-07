@@ -1,6 +1,4 @@
 import {
-  Box,
-  Divider,
   GridItem,
   SimpleGrid,
   VStack,

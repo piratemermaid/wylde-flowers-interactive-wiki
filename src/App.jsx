@@ -2,15 +2,16 @@ import React from 'react';
 import {
   Box,
   Button,
+  SimpleGrid,
   Text,
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react';
 
 import DaySelector from './components/DaySelector';
-import DailyShopSchedules from './components/DailyShopSchedules';
-import './styles/App.css';
 import ShopSchedulesByDay from './components/ShopSchedulesByDay';
+import Notes from './components/Notes';
+import './styles/App.css';
 
 function App() {
   const [selectedDay, setSelectedDay] = React.useState(null);
@@ -34,15 +35,24 @@ function App() {
         Toggle Dark Mode
       </Button>
 
-      <Section>
-        <SectionTitle title="Schedules By Day" />
-        <DaySelector
-          selectedDay={selectedDay}
-          setSelectedDay={setSelectedDay}
-        />
+      <SimpleGrid columns={2}>
+        <Section>
+          <SectionTitle title="Schedules By Day" />
+          <DaySelector
+            selectedDay={selectedDay}
+            setSelectedDay={setSelectedDay}
+          />
 
-        {selectedDay ? <ShopSchedulesByDay selectedDay={selectedDay} /> : null}
-      </Section>
+          {selectedDay ? (
+            <ShopSchedulesByDay selectedDay={selectedDay} />
+          ) : null}
+        </Section>
+
+        <Section>
+          <SectionTitle title="Notes" />
+          <Notes />
+        </Section>
+      </SimpleGrid>
     </>
   );
 }
