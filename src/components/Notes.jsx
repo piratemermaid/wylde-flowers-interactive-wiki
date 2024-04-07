@@ -14,6 +14,7 @@ export default function Notes() {
         onChange={(event) => setNotes(event.target.value)}
         placeholder="Take notes here"
         height="auto"
+        size="sm"
         rows={30}
       />
     </>
