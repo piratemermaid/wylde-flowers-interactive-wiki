@@ -40,9 +40,7 @@ export default function ShopSchedulesByDay({ selectedDay }) {
                     icon={<StarIcon />}
                     aria-label="Favorite shop"
                     color={
-                      favoriteShops.includes(name)
-                        ? 'secondary.700'
-                        : 'gray.300'
+                      favoriteShops.includes(name) ? 'golden.500' : 'gray.300'
                     }
                     sx={{ position: 'relative', bottom: 0.5, height: 3 }}
                     onClick={() => toggleFavoriteShop(name)}
