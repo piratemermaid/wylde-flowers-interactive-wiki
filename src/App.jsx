@@ -1,9 +1,20 @@
-import { Button, useColorMode, useColorModeValue } from '@chakra-ui/react';
+import React from 'react';
+import {
+  Box,
+  Button,
+  Text,
+  useColorMode,
+  useColorModeValue,
+} from '@chakra-ui/react';
 
-import ShopSchedule from './components/ShopSchedule';
+import DaySelector from './components/DaySelector';
+import DailyShopSchedules from './components/DailyShopSchedules';
 import './styles/App.css';
+import ShopSchedulesByDay from './components/ShopSchedulesByDay';
 
 function App() {
+  const [selectedDay, setSelectedDay] = React.useState(null);
+
   const { toggleColorMode } = useColorMode();
 
   const buttonColor = useColorModeValue('primary.300', 'primary.600');
@@ -23,9 +34,38 @@ function App() {
         Toggle Dark Mode
       </Button>
 
-      <ShopSchedule />
+      <Section>
+        <SectionTitle title="Schedules By Day" />
+        <DaySelector
+          selectedDay={selectedDay}
+          setSelectedDay={setSelectedDay}
+        />
+
+        {selectedDay ? <ShopSchedulesByDay selectedDay={selectedDay} /> : null}
+      </Section>
+
+      <Section>
+        <SectionTitle title="Daily Shop Schedules" />
+        <DailyShopSchedules selectedDay={selectedDay} />
+      </Section>
     </>
   );
 }
+
+const Section = ({ children }) => {
+  return <Box sx={{ mb: 6 }}>{children}</Box>;
+};
+
+const SectionTitle = ({ title }) => {
+  return (
+    <Text
+      fontSize="lg"
+      color="primary.200"
+      sx={{ mb: 2, textTransform: 'uppercase' }}
+    >
+      {title}
+    </Text>
+  );
+};
 
 export default App;

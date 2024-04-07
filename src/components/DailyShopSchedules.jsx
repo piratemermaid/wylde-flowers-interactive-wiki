@@ -1,18 +1,15 @@
 import React from 'react';
 import {
   Box,
-  HStack,
   SimpleGrid,
   Text,
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react';
 
-import { shops } from '../data/shops';
+import { days, shops } from '../data/shops';
 
-const days = ['M', 'TU', 'W', 'TH', 'F', 'SA', 'SU'];
-
-export default function ShopSchedule() {
+export default function DailyShopSchedules() {
   const getShopSchedules = () => {
     let schedules = { M: [], TU: [], W: [], TH: [], F: [], SA: [], SU: [] };
 
@@ -39,10 +36,6 @@ export default function ShopSchedule() {
 
   return (
     <>
-      <Text fontSize="lg" sx={{ mb: 5 }}>
-        Shop Schedules
-      </Text>
-
       <SimpleGrid columns={7} spacing={2}>
         {Object.keys(shopSchedules).map((day) => {
           return (

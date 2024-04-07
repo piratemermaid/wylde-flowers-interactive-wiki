@@ -1,3 +1,5 @@
+export const days = ['M', 'TU', 'W', 'TH', 'F', 'SA', 'SU'];
+
 export const shops = [
   {
     name: 'Blacksmith',
