@@ -43,11 +43,6 @@ function App() {
 
         {selectedDay ? <ShopSchedulesByDay selectedDay={selectedDay} /> : null}
       </Section>
-
-      <Section>
-        <SectionTitle title="Daily Shop Schedules" />
-        <DailyShopSchedules selectedDay={selectedDay} />
-      </Section>
     </>
   );
 }

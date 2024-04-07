@@ -7,28 +7,9 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
-import { days, shops } from '../data/shops';
+import { shopSchedulesByDay } from '../data/shops';
 
 export default function DailyShopSchedules() {
-  const getShopSchedules = () => {
-    let schedules = { M: [], TU: [], W: [], TH: [], F: [], SA: [], SU: [] };
-
-    for (let shop of shops) {
-      for (let day of days) {
-        const isOpen = !shop.closures.includes(day);
-        schedules[day].push({
-          name: shop.name,
-          owner: shop.owner,
-          open: isOpen,
-        });
-      }
-    }
-
-    return schedules;
-  };
-
-  const shopSchedules = React.useMemo(() => getShopSchedules());
-
   const { colorMode } = useColorMode();
   const dayLabelColor = useColorModeValue('secondary.500', 'secondary.300');
   const openShopColor = useColorModeValue('green.400', 'green.500');
@@ -37,7 +18,7 @@ export default function DailyShopSchedules() {
   return (
     <>
       <SimpleGrid columns={7} spacing={2}>
-        {Object.keys(shopSchedules).map((day) => {
+        {Object.keys(shopSchedulesByDay).map((day) => {
           return (
             <Box>
               <Text
@@ -48,7 +29,7 @@ export default function DailyShopSchedules() {
               >
                 {day}
               </Text>
-              {shopSchedules[day].map(({ name, owner, open }) => {
+              {shopSchedulesByDay[day].map(({ name, owner, open }) => {
                 return (
                   <Box
                     key={name}
