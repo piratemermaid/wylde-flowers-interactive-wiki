@@ -35,7 +35,7 @@ export const shops = [
     closures: ['M', 'W', 'TH'],
   },
   {
-    name: 'Fish',
+    name: 'Fish Shop',
     owner: 'Bruno',
     closures: ['M', 'F', 'SU'],
   },
@@ -55,7 +55,7 @@ export const shops = [
     closures: ['TH', 'F', 'SA'],
   },
   {
-    name: 'Consciousness Center',
+    name: 'MLM',
     owner: 'Cameron',
     closures: ['W', 'F'],
   },

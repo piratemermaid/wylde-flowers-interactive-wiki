@@ -1,22 +1,29 @@
-import { Button, Text, useColorMode } from '@chakra-ui/react';
+import { Button, useColorMode, useColorModeValue } from '@chakra-ui/react';
 
+import ShopSchedule from './components/ShopSchedule';
 import './styles/App.css';
 
 function App() {
   const { toggleColorMode } = useColorMode();
 
+  const buttonColor = useColorModeValue('primary.300', 'primary.600');
+
   return (
     <>
-      <Button size="sm" colorScheme="blue" onClick={toggleColorMode}>
-        Toggle Mode
+      <Button
+        size="sm"
+        sx={{
+          backgroundColor: buttonColor,
+          position: 'absolute',
+          right: 2,
+          top: 2,
+        }}
+        onClick={toggleColorMode}
+      >
+        Toggle Dark Mode
       </Button>
 
-      <Text fontSize="xl" color="primary.500">
-        Hello
-      </Text>
-      <Text fontSize="xl" color="secondary.500">
-        Hello
-      </Text>
+      <ShopSchedule />
     </>
   );
 }
