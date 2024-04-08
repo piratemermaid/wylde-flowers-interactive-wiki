@@ -24,7 +24,7 @@ export const shops = [
   {
     name: 'Carpenter',
     owner: 'Parker',
-    closures: ['SA', 'SA'],
+    closures: ['SA', 'SU'],
   },
   {
     name: 'General Store',
