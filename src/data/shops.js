@@ -635,7 +635,7 @@ export const shopSchedulesByDay = {
     {
       name: 'Carpenter',
       owner: 'Parker',
-      open: true,
+      open: false,
     },
     {
       name: 'General Store',
